@@ -20,9 +20,9 @@ interface Props {
 
 export default function ClientRow( Props : Props) {
   const [deleteClient] = useMutation(DELETE_CLIENT)
-
+console.log(Props.id,"id")
   return (
-    <tr>
+    <tr key={Props.id}>
       <td>{Props.client.name}</td>
       <td>{Props. client.email}</td>
       <td>{Props.client.phone}</td>
