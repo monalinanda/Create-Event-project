@@ -1,5 +1,5 @@
-const Event = require("../models/Event");
-const Client = require("../models/Client");
+const Event = require("../models/event");
+const Client = require("../models/client");
 
 const {
   GraphQLObjectType,
