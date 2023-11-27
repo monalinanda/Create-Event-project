@@ -26,7 +26,6 @@ export default function EditEventForm({ event} : EventProps) {
   const [date, setDate] = useState(event.date);
   const [time, setTime] = useState(event.time);
   const [duration, setDuration] = useState(event.duration);
-  const [clientId, setClientId] = useState('');
   const [status, setStatus] = useState(() => {
     switch (event.status) {
       case "Not Started":
@@ -41,7 +40,7 @@ export default function EditEventForm({ event} : EventProps) {
   });
 
   const [updateProject] = useMutation(UPDATE_EVENT, {
-    variables: { id: event.id, name, description,date , time , duration, status  , clientId},
+    variables: { id: event.id, name, description,date , time , duration, status },
     refetchQueries: [{ query: GET_EVENT , variables: { id: event.id } }],
   });
 
@@ -52,7 +51,7 @@ export default function EditEventForm({ event} : EventProps) {
       return alert("Please fill out all fields");
     }
 
-    updateProject(name, description, date , time , duration, status , clientId);
+    updateProject();
   };
 
   return (

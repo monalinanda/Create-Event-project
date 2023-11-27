@@ -45,7 +45,7 @@ export default function AddEventModal() {
       return alert('Please fill in all fields');
     }
 
-    addEvent(name, description, date , time , duration, status , clientId) ;
+    addEvent() ;
 
     setName('');
     setDescription('');

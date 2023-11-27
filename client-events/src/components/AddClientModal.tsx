@@ -4,16 +4,6 @@ import { useMutation } from "@apollo/client";
 import { ADD_CLIENT } from "../mutations/clientMutations";
 import { GET_CLIENTS } from "../queries/clientQueries";
 
-interface Client {
-  id?: string;
-  name: string;
-  email: string;
-  phone: string;
-}
-interface ClientsResult {
-  clients: any;
-}
-
 export const AddClientModal = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -39,7 +29,7 @@ export const AddClientModal = () => {
       return alert("Please fill in all fields");
     }
 
-    addClient(name, email, phone);
+    addClient();
 
     setName("");
     setEmail("");
