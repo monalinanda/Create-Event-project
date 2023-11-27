@@ -20,14 +20,12 @@ interface Props {
 
 export default function ClientRow( Props : Props) {
   const [deleteClient] = useMutation(DELETE_CLIENT)
-console.log(Props.id,"id")
   return (
     <tr key={Props.id}>
       <td>{Props.client.name}</td>
       <td>{Props. client.email}</td>
       <td>{Props.client.phone}</td>
       <td>
-        {/* <button className='btn btn-danger btn-sm' onClick={deleteClient}> */}
         <button className='btn btn-danger btn-sm' onClick={()=>deleteClient( {
      variables: { id: Props.client.id },
     refetchQueries: [{ query: GET_CLIENTS }, { query: GET_EVENTS }]})}>
